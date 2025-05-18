@@ -137,7 +137,7 @@ export default function Home() {
       });
 
       setWatchlist(watchlistItems);
-      
+
       // Update the current selected movie's watchlist status if there is a selected movie
       if (selectedMovie) {
         const isInWatchlist = watchlistItems.some(
@@ -152,7 +152,7 @@ export default function Home() {
       setIsLoadingWatchlist(false);
     }
   };
-  
+
   // Helper function to check if a movie is in the watchlist
   const checkIsWatchlisted = (movieId: string) => {
     const isInWatchlist = watchlist.some((item) => item.movieId === movieId);
@@ -163,7 +163,7 @@ export default function Home() {
     setSelectedMovie(movie);
     setIsModalOpen(true);
     await fetchMovieReviews(movie.id);
-    
+
     // Check if movie is already in watchlist
     checkIsWatchlisted(movie.id);
   };
@@ -206,8 +206,7 @@ export default function Home() {
       if (currentUserId) {
         // Check if any review has the current user's ID and isReview is true
         const userHasReviewed = data.data.some(
-          (review: Review) =>
-            review.userId == currentUserId
+          (review: Review) => review.userId == currentUserId
         );
         setHasUserReviewed(userHasReviewed);
       }
@@ -275,7 +274,7 @@ export default function Home() {
       setIsAddingToWatchlist(false);
     }
   };
-  
+
   // Function to remove a movie from the watchlist
   const handleRemoveFromWatchlist = async (movie: Movie) => {
     const userId = localStorage.getItem("user_id");
@@ -632,7 +631,8 @@ export default function Home() {
           </section>
         </main>
       </div>
-      {/* Movie Detail Modal */}{" "}      <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
+      {/* Movie Detail Modal */}{" "}
+      <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
         <DialogContent className="max-w-7xl max-lg:max-w-4xl p-4 md:overflow-hidden max-h-[90vh]">
           {selectedMovie && (
             <div className="flex flex-col md:flex-row text-white max-sm:overflow-y-auto max-sm:max-h-full">
@@ -698,7 +698,8 @@ export default function Home() {
                     <h4 className="font-semibold text-gray-400">Synopsis:</h4>
                     <p className="text-gray-300">{selectedMovie.synopsis}</p>
                   </div>
-                )}{" "}                <div className="flex gap-3 mt-4">
+                )}{" "}
+                <div className="flex gap-3 mt-4">
                   {selectedMovie.linkYoutube && (
                     <Button
                       className="gap-2 bg-white hover:bg-red-700 text-black hover:text-white duration-300 transition-all"

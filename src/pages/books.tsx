@@ -200,8 +200,7 @@ export default function Home() {
       if (currentUserId) {
         // Check if any review has the current user's ID and isReview is true
         const userHasReviewed = data.data.some(
-          (review: Review) =>
-            review.userId == currentUserId
+          (review: Review) => review.userId == currentUserId
         );
         setHasUserReviewed(userHasReviewed);
       }
@@ -621,7 +620,8 @@ export default function Home() {
           </section>
         </main>
       </div>
-      {/* book Detail Modal */}{" "}      <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
+      {/* book Detail Modal */}{" "}
+      <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
         <DialogContent className="max-w-7xl max-lg:max-w-4xl p-4 md:overflow-hidden max-h-[90vh]">
           {selectedbook && (
             <div className="flex flex-col md:flex-row text-white max-sm:overflow-y-auto max-sm:max-h-full">
