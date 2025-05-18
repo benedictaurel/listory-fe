@@ -632,13 +632,12 @@ export default function Home() {
           </section>
         </main>
       </div>
-      {/* Movie Detail Modal */}{" "}
-      <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
-        <DialogContent className="max-w-7xl max-lg:max-w-4xl p-4 md:overflow-hidden">
+      {/* Movie Detail Modal */}{" "}      <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
+        <DialogContent className="max-w-7xl max-lg:max-w-4xl p-4 md:overflow-hidden max-h-[90vh]">
           {selectedMovie && (
-            <div className="flex flex-col md:flex-row text-white">
+            <div className="flex flex-col md:flex-row text-white max-sm:overflow-y-auto max-sm:max-h-full">
               {/* Left side: Movie Poster */}
-              <div className="md:w-1/3 relative md:flex md:items-center md:justify-center">
+              <div className="md:w-1/3 relative md:flex md:items-center md:justify-center max-sm:mb-4">
                 <img
                   src={
                     selectedMovie.posterUrl ||
@@ -650,7 +649,7 @@ export default function Home() {
               </div>
 
               {/* Right side: Movie Details */}
-              <div className="md:w-2/3 p-6 space-y-4 overflow-y-auto max-h-[90vh] scrollbar-hide">
+              <div className="md:w-2/3 p-6 space-y-4 md:overflow-y-auto md:max-h-[90vh] scrollbar-hide">
                 <DialogHeader>
                   <DialogTitle className="text-3xl font-bold">
                     {selectedMovie.title}

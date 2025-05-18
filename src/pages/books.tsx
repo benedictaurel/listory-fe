@@ -621,13 +621,12 @@ export default function Home() {
           </section>
         </main>
       </div>
-      {/* book Detail Modal */}{" "}
-      <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
-        <DialogContent className="max-w-7xl max-lg:max-w-4xl p-4 md:overflow-hidden">
+      {/* book Detail Modal */}{" "}      <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
+        <DialogContent className="max-w-7xl max-lg:max-w-4xl p-4 md:overflow-hidden max-h-[90vh]">
           {selectedbook && (
-            <div className="flex flex-col md:flex-row text-white">
+            <div className="flex flex-col md:flex-row text-white max-sm:overflow-y-auto max-sm:max-h-full">
               {/* Left side: book Poster */}
-              <div className="md:w-1/3 relative md:flex md:items-center md:justify-center">
+              <div className="md:w-1/3 relative md:flex md:items-center md:justify-center max-sm:mb-4">
                 <img
                   src={
                     selectedbook.coverUrl ||
@@ -639,7 +638,7 @@ export default function Home() {
               </div>
 
               {/* Right side: book Details */}
-              <div className="md:w-2/3 p-6 space-y-4 overflow-y-auto max-h-[90vh] scrollbar-hide">
+              <div className="md:w-2/3 p-6 space-y-4 md:overflow-y-auto md:max-h-[90vh] scrollbar-hide">
                 <DialogHeader>
                   <DialogTitle className="text-3xl font-bold">
                     {selectedbook.title}
