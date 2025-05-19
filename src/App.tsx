@@ -345,7 +345,6 @@ export default function App() {
         </div>
       </section>
 
-      {/* CTA Section */}
       <section className="py-20 text-white">
         <div className="container mx-auto px-4">
           <div className="bg-gradient-to-r from-purple-900 to-purple-700 rounded-2xl p-8 md:p-12 text-center">
